@@ -1,0 +1,277 @@
+.hidden {
+  display: none;
+}
+
+body {
+  --bg-color: #101010;
+  --hover-color: #272727;
+  --line-color: #707070;
+  --line-dark-color: #414141;
+  --text-color: white;
+  --text-dark-color: #b6b6b6;
+  --window-width: 1920px;
+  --window-height: 70px;
+  background-color: var(--bg-color);
+  margin: 0;
+  color: var(--text-color);
+  font-family: "Segoe UI";
+  font-weight: 450;
+  font-size: 14.5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+}
+
+.main {
+  --main-width: calc(var(--window-width) - 0px);
+  --main-height: calc(var(--window-height) - 0px);
+  --home-width: 5px;
+  --timer-width: 70px;
+  --main-home: var(--home-width);
+  --main-timer: var(--timer-width);
+  --main-container: calc(var(--main-width) - calc(var(--main-home) + var(--main-timer)));
+  max-width: var(--main-width);
+  max-height: var(--main-height);
+  display: grid;
+  grid-template-columns: var(--main-container) var(--main-timer) var(--main-home);
+}
+
+.container > .page {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container > .page1 {
+  --page-height: var(--main-height);
+  --window-tab-width: 300px;
+  --ram-tab-width: 150px;
+  --cpu-tab-width: 150px;
+  --download-tab-width: 150px;
+  --upload-tab-width: 150px;
+  --stopwatch-tab-width: 150px;
+  --timer-tab-width: 150px;
+}
+.container > .page1 > .page-top {
+  display: grid;
+  grid-template-columns: var(--window-tab-width) var(--ram-tab-width) var(--cpu-tab-width) var(--download-tab-width) var(--upload-tab-width) var(--stopwatch-tab-width) var(--timer-tab-width);
+}
+.container > .page1 > .page-top > .musicStats {
+  height: var(--page-height);
+  width: var(--window-tab-width);
+  display: grid;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  --musicDivHeights: calc(var(--page-height) * 0.33);
+}
+.container > .page1 > .page-top > .musicStats > .musicTitle {
+  text-align: center;
+  overflow: hidden;
+}
+.container > .page1 > .page-top > .musicStats > .musicTitle > .scrollText {
+  --scrollSpeed: 5s;
+  transform: translateX(100%);
+  -webkit-animation: my-animation var(--scrollSpeed) linear infinite;
+  animation: my-animation var(--scrollSpeed) linear infinite;
+}
+.container > .page1 > .page-top > .musicStats > .musicControls {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+}
+.container > .page1 > .page-top > .musicStats > .musicControls > .musicControlLeft {
+  text-align: center;
+  line-height: var(--musicDivHeights);
+}
+.container > .page1 > .page-top > .musicStats > .musicControls > .musicControlLeft:hover {
+  background-color: var(--hover-color);
+}
+.container > .page1 > .page-top > .musicStats > .musicControls > .musicControlMiddle > .musicTimeline {
+  --musicTimelime-height:calc(var(--musicDivHeights) * 0.3);
+  background-color: var(--line-dark-color);
+  width: 90%;
+  height: var(--musicTimelime-height);
+  border-radius: 20px;
+  margin: auto;
+  margin-top: calc((var(--musicDivHeights) - var(--musicTimelime-height)) / 3);
+}
+.container > .page1 > .page-top > .musicStats > .musicControls > .musicControlMiddle > .musicTimeline > .musicTimelineDot {
+  width: 0px;
+  height: 100%;
+  background-color: var(--line-color);
+  border-radius: 20px;
+}
+.container > .page1 > .page-top > .musicStats > .musicControls > .musicControlRight {
+  text-align: center;
+  line-height: var(--musicDivHeights);
+}
+.container > .page1 > .page-top > .musicStats > .musicControls > .musicControlRight:hover {
+  background-color: var(--hover-color);
+}
+.container > .page1 > .page-top > .musicStats > .musicOptions {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.container > .page1 > .page-top > .musicStats > .musicOptions > .musicPlayPause {
+  --playPauseSVG-height: 16px;
+  text-align: right;
+}
+.container > .page1 > .page-top > .musicStats > .musicOptions > .musicPlayPause:hover {
+  background-color: var(--hover-color);
+}
+.container > .page1 > .page-top > .musicStats > .musicOptions > .musicPlayPause > svg {
+  margin-top: calc((var(--musicDivHeights) - var(--playPauseSVG-height)) / 2);
+}
+.container > .page1 > .page-top > .musicStats > .musicOptions > .musicTimer {
+  font-size: 12px;
+  line-height: var(--musicDivHeights);
+  text-align: center;
+  color: var(--text-dark-color);
+}
+.container > .page1 > .page-top > .musicStats > .musicOptions > .musicTimer:hover {
+  background-color: var(--hover-color);
+}
+.container > .page1 > .page-top > .musicStats > .musicOptions > .musicOptionsButtonWrapper {
+  --musicOptionsButtonSVG-height: 16px;
+}
+.container > .page1 > .page-top > .musicStats > .musicOptions > .musicOptionsButtonWrapper:hover {
+  background-color: var(--hover-color);
+}
+.container > .page1 > .page-top > .musicStats > .musicOptions > .musicOptionsButtonWrapper > svg {
+  margin-top: calc((var(--musicDivHeights) - var(--musicOptionsButtonSVG-height)) / 2);
+}
+.container > .page1 > .page-top > .ramStatsTab {
+  height: var(--page-height);
+  width: var(--ram-tab-width);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container > .page1 > .page-top > .ramStatsTab > .ramMeter {
+  width: calc(var(--ram-tab-width) - 20px);
+  height: var(--page-height);
+}
+.container > .page1 > .page-top > .cpuStatsTab {
+  height: var(--page-height);
+  width: var(--cpu-tab-width);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container > .page1 > .page-top > .cpuStatsTab > .cpuMeter {
+  width: calc(var(--cpu-tab-width) - 20px);
+  height: var(--page-height);
+}
+.container > .page1 > .page-top > .downloadSpeedTab {
+  height: var(--page-height);
+  width: var(--download-tab-width);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container > .page1 > .page-top > .downloadSpeedTab > .downloadMeter {
+  width: calc(var(--download-tab-width) - 20px);
+  height: var(--page-height);
+}
+.container > .page1 > .page-top > .uploadSpeedTab {
+  height: var(--page-height);
+  width: var(--upload-tab-width);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container > .page1 > .page-top > .uploadSpeedTab > .uploadMeter {
+  width: calc(var(--upload-tab-width) - 20px);
+  height: var(--page-height);
+}
+.container > .page1 > .page-top > .stopwatchTab {
+  height: var(--page-height);
+  width: var(--stopwatch-tab-width);
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.container > .page1 > .page-top > .stopwatchTab:hover {
+  stroke: var(--text-color);
+}
+.container > .page1 > .page-top > .stopwatchTab > .stopwatchCircle {
+  margin-left: 10px;
+  width: calc(var(--stopwatch-tab-width) - 20px);
+  height: calc(var(--page-height) - 0px);
+}
+.container > .page1 > .page-top > .timerTab {
+  height: var(--page-height);
+  width: var(--stopwatch-tab-width);
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.container > .page1 > .page-top > .timerTab:hover {
+  stroke: var(--text-color);
+}
+.container > .page1 > .page-top > .timerTab > .timerCircle {
+  margin-left: 10px;
+  width: calc(var(--stopwatch-tab-width) - 20px);
+  height: calc(var(--page-height) - 0px);
+}
+.container > .page-hidden {
+  display: none;
+}
+
+.timer {
+  width: calc(100% - 1px);
+  height: var(--main-height);
+  display: grid;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  line-height: calc(var(--main-height) * 0.33);
+}
+.timer > .timer-top {
+  text-align: center;
+  color: var(--text-dark-color);
+}
+.timer > .timer-top:hover {
+  background-color: var(--hover-color);
+}
+.timer > .timer-middle {
+  text-align: center;
+}
+.timer > .timer-middle:hover {
+  background-color: var(--hover-color);
+}
+.timer > .timer-middle > .timer-middle-num {
+  margin-right: 2px;
+}
+.timer > .timer-middle > .timer-middle-lockIcon {
+  margin-left: 2px;
+}
+.timer > .timer-bottom {
+  text-align: center;
+  color: var(--text-dark-color);
+}
+.timer > .timer-bottom:hover {
+  background-color: var(--hover-color);
+}
+
+.home {
+  border-left: 1px solid var(--line-color);
+  width: calc(100% - 1px);
+  height: var(--main-height);
+}
+.home:hover {
+  background-color: var(--hover-color);
+}
+
+@-webkit-keyframes my-animation {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes my-animation {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+#container {
+  width: 150px;
+  height: 75px;
+}/*# sourceMappingURL=main.css.map */

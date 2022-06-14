@@ -1,0 +1,61 @@
+body {
+  --bg-color: #101010;
+  --bg-light-color: #1a1a1a;
+  --hover-color: #272727;
+  --line-color: #707070;
+  --line-dark-color: #414141;
+  --text-color: white;
+  --text-dark-color: #b6b6b6;
+  --text-darker-color: #575757;
+  --windows-color: #5cdce6;
+  --window-width: 100vw;
+  --window-height: 100vh;
+  --topbar-height: 30px;
+  --musicType-height: 100px;
+  --musicProperties-height: calc(calc(var(--window-height) - var(--topbar-height)) - var(--musicType-height));
+  margin: 0;
+  color: var(--text-color);
+  font-family: "Segoe UI";
+  font-weight: 450;
+  font-size: 14.5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+}
+
+.main {
+  background-color: var(--bg-color);
+  border-radius: 20px 20px 20px 20px;
+  width: var(--window-width);
+  height: var(--window-height);
+}
+.main > .topbar {
+  -webkit-app-region: drag;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--bg-light-color);
+  width: var(--window-width);
+  height: var(--topbar-height);
+  display: grid;
+  grid-template-columns: 95% 5%;
+}
+.main > .topbar > .topbar-main {
+  margin-left: 15px;
+  line-height: var(--topbar-height);
+  color: var(--text-dark-color);
+}
+.main > .topbar > .topbar-closeBTN {
+  -webkit-app-region: no-drag;
+  font-size: 20px;
+  text-align: center;
+  line-height: calc(var(--topbar-height) - 5px);
+}
+.main > .topbar > .topbar-closeBTN:hover {
+  border-radius: 0px 20px 0px 0px;
+  background-color: rgb(255, 0, 0);
+}
+.main > iframe {
+  width: calc(100vw - 0px);
+  height: calc(100vh - var(--topbar-height));
+}/*# sourceMappingURL=style.css.map */

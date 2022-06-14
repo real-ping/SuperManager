@@ -1,0 +1,276 @@
+body {
+    --bg-color: #101010;
+    --bg-light-color: #1a1a1a;
+    --hover-color: #272727;
+    --line-color: #707070;
+    --line-dark-color: #414141;
+    --text-color: white;
+    --text-dark-color: #b6b6b6;
+    --text-darker-color: #575757;
+    --windows-color: #5cdce6;
+
+    --window-width: calc(800px - 3px);
+    --window-height: calc(600px - 3px);
+    --topbar-height: 30px;
+    --musicType-height: 100px;
+    --musicProperties-height: calc(calc(var(--window-height) - var(--topbar-height)) - var(--musicType-height));
+
+    margin: 0;
+    color: var(--text-color);
+    font-family: 'Segoe UI';
+    font-weight: 450;
+    font-size: 14.5px;
+    user-select: none;
+    overflow: hidden;
+}
+
+.main {
+    border-radius: 20px;
+    background-color: var(--bg-color);
+    width: var(--window-width);
+    height: var(--window-height);
+    border: 1.5px solid var(--line-dark-color);
+
+    & > .topbar {
+        -webkit-app-region: drag;
+
+        border-radius: 20px 20px 0px 0px;
+        background-color: var(--bg-light-color);
+        width: var(--window-width);
+        height: var(--topbar-height);
+        display: grid;
+        grid-template-columns: 95% 5%;
+
+        & > .topbar-main {
+            margin-left: 15px;
+            line-height: var(--topbar-height);
+            color: var(--text-dark-color);
+        }
+
+        & > .topbar-closeBTN {
+            -webkit-app-region: no-drag;
+            font-size: 20px;
+            text-align: center;
+            line-height: calc(var(--topbar-height) - 5px);
+
+            &:hover {
+                border-radius: 0px 20px 0px 0px;
+                background-color: rgb(255, 0, 0);
+            }
+        }
+    }
+}
+
+.musicType {
+    width: var(--window-width);
+    height: var(--musicType-height);
+    display: grid;
+    --option-width: calc(var(--window-width) * 0.1);
+    --option-height: calc(100px - 40px);
+    grid-template-columns: 35% 10% 10% 10% 35%;
+    
+    & > div {
+        border-bottom: 1px solid var(--line-dark-color);
+
+        --img-size: 45px;
+
+        & > img {
+            width: var(--img-size);
+            height: var(--img-size);
+            margin-top: calc(calc(var(--option-height) - var(--img-size)) / 2);
+            margin-left: calc(calc(var(--option-width) - var(--img-size)) / 2.15);
+        }
+    }
+
+    & > .youtubeOption {
+        border-top: 1px solid var(--line-dark-color);
+        border-left: 1px solid var(--line-dark-color);
+        border-right: 1px solid var(--line-dark-color);
+        border-bottom: 0;
+        margin-top: 40px;
+        border-radius: 20px 20px 0px 0px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--bg-light-color);
+        }
+    }
+
+    & > .spotifyOption {
+        border-top: 1px solid var(--line-dark-color);
+        border-left: 1px solid var(--line-dark-color);
+        border-right: 1px solid var(--line-dark-color);
+        border-bottom: 0;
+        margin-top: 40px;
+        border-radius: 20px 20px 0px 0px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--bg-light-color);
+        }
+    }
+
+    & > .optionUNSelected {
+        border-bottom: 1px solid var(--line-dark-color);
+        img {
+            opacity: 0.15;
+        }
+    }
+}
+
+.musicProperties {
+    width: 100%;
+    height: var(--musicProperties-height);
+    overflow-y: auto;
+
+    & > .youtubeProperties {
+
+        width: 50%;
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+
+        & > .addSong {
+            background-color: var(--bg-light-color);
+            padding-bottom: 2px;
+            padding-top: 2px;
+            margin-top: 5px;
+            height: 50px;
+            display: grid;
+            grid-template-columns: 40% 60%;
+            line-height: 50px;
+            cursor: pointer;
+            color: var(--text-dark-color);
+                
+            &:hover {
+                background-color: var(--hover-color);
+            }    
+
+            & > .addSongIcon {
+                margin-top: 2px;
+                text-align: right;
+            }
+
+            & > .addSongText {
+                margin-left: 5px;
+                text-align: left;
+                font-size: 13px;
+            }
+        }
+
+        & > .ytSong {
+            background-color: var(--bg-light-color);
+            padding-bottom: 2px;
+            padding-top: 2px;
+            margin-top: 5px;
+            display: grid;
+            grid-template-columns: 10% 70% 10% 10%;
+                
+            &:hover {
+                background-color: var(--hover-color);
+            }    
+
+            & > .songNumber {
+                text-align: center;
+                line-height: 50px;
+                color: var(--text-dark-color);
+            }
+
+            & > .songDetails {
+                & > h1 {
+                    font-size: 15px;
+                    font-weight: 450;
+                    margin: 0;
+                }
+    
+                & > p {
+                    font-size: 12px;
+                    font-weight: 450;
+                    margin: 0;
+                    color: var(--text-dark-color);
+                }
+            }
+
+            & > .songControls {
+                display: grid;
+                grid-template-rows: 50% 50%;
+                --songControls-height: calc(50px * 0.5);
+
+                & > .songEdit {
+                    color: var(--text-dark-color);
+                    text-align: center;
+                    cursor: pointer;
+                    padding-top: calc(calc(var(--songControls-height) - 16px) / 2);
+
+                    &:hover {
+                        background-color: var(--line-dark-color);
+                    }
+                }
+
+                & > .songRemove {
+                    color: var(--text-dark-color);
+                    text-align: center;
+                    cursor: pointer;
+                    padding-top: calc(calc(var(--songControls-height) - 16px) / 2);
+                    &:hover {
+                        background-color: var(--line-dark-color);
+                    }
+                }
+            }
+            & > .songPositionControls {
+                display: grid;
+                grid-template-rows: 50% 50%;
+                --songControls-height: calc(50px * 0.5);
+
+                & > .songPositionUp {
+                    text-align: center;
+                    color: var(--text-dark-color);
+                    cursor: pointer;
+                    padding-top: calc(calc(var(--songControls-height) - 16px) / 2);
+
+                    &:hover {
+                        background-color: var(--line-dark-color);
+                    }
+                }
+
+                & > .songPositionDown {
+                    text-align: center;
+                    color: var(--text-dark-color);
+                    cursor: pointer;
+                    padding-top: calc(calc(var(--songControls-height) - 16px) / 2);
+                    &:hover {
+                        background-color: var(--line-dark-color);
+                    }
+                }
+            }
+        }
+
+        & > .ytSong:first-child > .songPositionControls > .songPositionUp {
+            color: var(--text-darker-color);
+            &:hover {
+                background-color: transparent;
+                cursor: default;
+            }
+        }
+
+        & > .ytSong:last-child > .songPositionControls > .songPositionDown {
+            color: var(--text-darker-color);
+            &:hover {
+                background-color: transparent;
+                cursor: default;
+            }
+        }
+
+        & > .ytSong:last-child {
+            margin-bottom: 5px;
+        }
+    }
+
+    & > .spotifyProperties {
+
+    }
+
+    & > .propertiesUnSelected {
+        display: none;
+    }
+}

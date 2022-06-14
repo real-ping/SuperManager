@@ -1,0 +1,236 @@
+body {
+  --bg-color: #101010;
+  --bg-light-color: #1a1a1a;
+  --hover-color: #272727;
+  --line-color: #707070;
+  --line-dark-color: #414141;
+  --text-color: white;
+  --text-dark-color: #b6b6b6;
+  --text-darker-color: #575757;
+  --windows-color: #5cdce6;
+  --window-width: calc(800px - 3px);
+  --window-height: calc(600px - 3px);
+  --topbar-height: 30px;
+  --musicType-height: 100px;
+  --musicProperties-height: calc(calc(var(--window-height) - var(--topbar-height)) - var(--musicType-height));
+  margin: 0;
+  color: var(--text-color);
+  font-family: "Segoe UI";
+  font-weight: 450;
+  font-size: 14.5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+}
+
+.main {
+  border-radius: 20px;
+  background-color: var(--bg-color);
+  width: var(--window-width);
+  height: var(--window-height);
+  border: 1.5px solid var(--line-dark-color);
+}
+.main > .topbar {
+  -webkit-app-region: drag;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--bg-light-color);
+  width: var(--window-width);
+  height: var(--topbar-height);
+  display: grid;
+  grid-template-columns: 95% 5%;
+}
+.main > .topbar > .topbar-main {
+  margin-left: 15px;
+  line-height: var(--topbar-height);
+  color: var(--text-dark-color);
+}
+.main > .topbar > .topbar-closeBTN {
+  -webkit-app-region: no-drag;
+  font-size: 20px;
+  text-align: center;
+  line-height: calc(var(--topbar-height) - 5px);
+}
+.main > .topbar > .topbar-closeBTN:hover {
+  border-radius: 0px 20px 0px 0px;
+  background-color: rgb(255, 0, 0);
+}
+
+.musicType {
+  width: var(--window-width);
+  height: var(--musicType-height);
+  display: grid;
+  --option-width: calc(var(--window-width) * 0.1);
+  --option-height: calc(100px - 40px);
+  grid-template-columns: 35% 10% 10% 10% 35%;
+}
+.musicType > div {
+  border-bottom: 1px solid var(--line-dark-color);
+  --img-size: 45px;
+}
+.musicType > div > img {
+  width: var(--img-size);
+  height: var(--img-size);
+  margin-top: calc((var(--option-height) - var(--img-size)) / 2);
+  margin-left: calc((var(--option-width) - var(--img-size)) / 2.15);
+}
+.musicType > .youtubeOption {
+  border-top: 1px solid var(--line-dark-color);
+  border-left: 1px solid var(--line-dark-color);
+  border-right: 1px solid var(--line-dark-color);
+  border-bottom: 0;
+  margin-top: 40px;
+  border-radius: 20px 20px 0px 0px;
+  cursor: pointer;
+}
+.musicType > .youtubeOption:hover {
+  background-color: var(--bg-light-color);
+}
+.musicType > .spotifyOption {
+  border-top: 1px solid var(--line-dark-color);
+  border-left: 1px solid var(--line-dark-color);
+  border-right: 1px solid var(--line-dark-color);
+  border-bottom: 0;
+  margin-top: 40px;
+  border-radius: 20px 20px 0px 0px;
+  cursor: pointer;
+}
+.musicType > .spotifyOption:hover {
+  background-color: var(--bg-light-color);
+}
+.musicType > .optionUNSelected {
+  border-bottom: 1px solid var(--line-dark-color);
+}
+.musicType > .optionUNSelected img {
+  opacity: 0.15;
+}
+
+.musicProperties {
+  width: 100%;
+  height: var(--musicProperties-height);
+  overflow-y: auto;
+}
+.musicProperties > .youtubeProperties {
+  width: 50%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.musicProperties > .youtubeProperties > .addSong {
+  background-color: var(--bg-light-color);
+  padding-bottom: 2px;
+  padding-top: 2px;
+  margin-top: 5px;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  line-height: 50px;
+  cursor: pointer;
+  color: var(--text-dark-color);
+}
+.musicProperties > .youtubeProperties > .addSong:hover {
+  background-color: var(--hover-color);
+}
+.musicProperties > .youtubeProperties > .addSong > .addSongIcon {
+  margin-top: 2px;
+  text-align: right;
+}
+.musicProperties > .youtubeProperties > .addSong > .addSongText {
+  margin-left: 5px;
+  text-align: left;
+  font-size: 13px;
+}
+.musicProperties > .youtubeProperties > .ytSong {
+  background-color: var(--bg-light-color);
+  padding-bottom: 2px;
+  padding-top: 2px;
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 10% 70% 10% 10%;
+}
+.musicProperties > .youtubeProperties > .ytSong:hover {
+  background-color: var(--hover-color);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songNumber {
+  text-align: center;
+  line-height: 50px;
+  color: var(--text-dark-color);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songDetails > h1 {
+  font-size: 15px;
+  font-weight: 450;
+  margin: 0;
+}
+.musicProperties > .youtubeProperties > .ytSong > .songDetails > p {
+  font-size: 12px;
+  font-weight: 450;
+  margin: 0;
+  color: var(--text-dark-color);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songControls {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  --songControls-height: calc(50px * 0.5);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songControls > .songEdit {
+  color: var(--text-dark-color);
+  text-align: center;
+  cursor: pointer;
+  padding-top: calc((var(--songControls-height) - 16px) / 2);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songControls > .songEdit:hover {
+  background-color: var(--line-dark-color);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songControls > .songRemove {
+  color: var(--text-dark-color);
+  text-align: center;
+  cursor: pointer;
+  padding-top: calc((var(--songControls-height) - 16px) / 2);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songControls > .songRemove:hover {
+  background-color: var(--line-dark-color);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songPositionControls {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  --songControls-height: calc(50px * 0.5);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songPositionControls > .songPositionUp {
+  text-align: center;
+  color: var(--text-dark-color);
+  cursor: pointer;
+  padding-top: calc((var(--songControls-height) - 16px) / 2);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songPositionControls > .songPositionUp:hover {
+  background-color: var(--line-dark-color);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songPositionControls > .songPositionDown {
+  text-align: center;
+  color: var(--text-dark-color);
+  cursor: pointer;
+  padding-top: calc((var(--songControls-height) - 16px) / 2);
+}
+.musicProperties > .youtubeProperties > .ytSong > .songPositionControls > .songPositionDown:hover {
+  background-color: var(--line-dark-color);
+}
+.musicProperties > .youtubeProperties > .ytSong:first-child > .songPositionControls > .songPositionUp {
+  color: var(--text-darker-color);
+}
+.musicProperties > .youtubeProperties > .ytSong:first-child > .songPositionControls > .songPositionUp:hover {
+  background-color: transparent;
+  cursor: default;
+}
+.musicProperties > .youtubeProperties > .ytSong:last-child > .songPositionControls > .songPositionDown {
+  color: var(--text-darker-color);
+}
+.musicProperties > .youtubeProperties > .ytSong:last-child > .songPositionControls > .songPositionDown:hover {
+  background-color: transparent;
+  cursor: default;
+}
+.musicProperties > .youtubeProperties > .ytSong:last-child {
+  margin-bottom: 5px;
+}
+.musicProperties > .propertiesUnSelected {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./ref.js"></script>
+    <script defer src="./main.js"></script>
+</head>
+<body>
+    <div class="main" id="main">
+        <div class="topbar">
+            <div class="topbar-main">Theme Menu</div>
+            <div class="topbar-closeBTN" id="topbar-closeBTN">×</div>
+            <script>
+                document.getElementById('topbar-closeBTN').onclick = (() => {
+                    window.api.emit('call', 'themeMenuWin-hide')
+                })
+            </script>
+        </div>
+
+        <div class="themesContainer" id="themesContainer">
+            
+            <div class="themeWrapper defaultTheme">
+                Default Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="themeWrapper discordTheme">
+                Discord Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="themeWrapper monokaiTheme">
+                Monokai Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="themeWrapper Abyss">
+                Abyss Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+            
+
+            
+
+            
+            <div class="themeWrapper DuoTone">
+                DuoTone Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="themeWrapper Kimbie">
+                Kimbie Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="themeWrapper Rose">
+                Rose Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+            <div class="themeWrapper Solarized">
+                Solarized Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+            <div class="themeWrapper Palenight">
+                Palenight Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+            <div class="themeWrapper Vue">
+                Vue Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+            <div class="themeWrapper Omni">
+                Omni Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+            <div class="themeWrapper darkOcean">
+                Dark Ocean Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+            <div class="themeWrapper flashBang">
+                Flash Bang Theme
+                <div class="themeBackgroundColor">
+                    some text
+                    <div class="themeBackgroundColor2">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

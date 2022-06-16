@@ -168,6 +168,7 @@ app.whenReady().then(() => {
             themeMenuWindow(false)
         }),
         "getTheme": ((e) => {
+            if (!fs.readdirSync(`./db`).includes(`currentTheme.json`)) fs.writeFileSync(`./db/currentTheme.json`, `{"colors":{"line-color":" #2e3338","line-dark-color":" #2f3136","bg-color":" #202225","hover-color":" #3b3e45","text-color":" #dcddde","text-dark-color":" #898b8e"}}`)
             e.returnValue = require('./db/currentTheme.json');
             delete require.cache[require.resolve('./db/currentTheme.json')]
         }),
